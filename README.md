@@ -7,6 +7,7 @@ AI認識のFaster-Whisperをゆかりねっとや、ゆかコネNEOで使うた�
 * googleより少し認識速度が速いです(RTX3080Ti基準)  
 ![YukariWhisper01.png.](./image/YukariWhisper01.png "YukariWhisper01")  
 * nVIDIA系GPU(1000番以降)で動作します。 Driverは572.83以降(Cuda12.8)必須
+* **RTX 5000シリーズ(SM120対応)をお使いの方へ**: setup.batを実行すると自動的にSM120対応のPyTorchがインストールされます
 ![YukariWhisper07.png.](./image/YukariWhisper07.png "YukariWhisper07")  
 
 # Installation
@@ -15,12 +16,21 @@ AI認識のFaster-Whisperをゆかりねっとや、ゆかコネNEOで使うた�
   pythonのパスを追加にチェックを入れてインストールしてください。  
   ![YukariWhisper05.png.](./image/YukariWhisper05.png "YukariWhisper05")
 
+### RTX 5000シリーズ(SM120)対応への更新手順
+  * 既存の環境がある場合は、`venv`フォルダを削除してください
+  * `setup.bat`を再実行すると、SM120対応のPyTorchが自動的にインストールされます
+  * または、venv環境内で以下のコマンドを手動実行してください:
+    ```
+    pip uninstall torch torchvision torchaudio -y
+    pip install rtx-stone[all]
+    ```
+
 ### v0.0.5以前からバージョンアップの方
   * [変更点はこちら](https://github.com/tyapa0/YukariWhisper/releases)
   * v0.0.5以前からは互換性が無いので、旧フォルダを削除してください。
   * `初めてのかた`を見て新規インストールをしてください。
   * `yukariwhisper.ini`は古いものを使わないでください！！(互換性なし)
-  
+
 ### 初めてのかた
   *  Source code (zip) をDownLoadします。 https://github.com/tyapa0/YukariWhisper/archive/refs/tags/v0.1.1.zip
   * `YukariWhisper-0.x.x.zip`を任意のフォルダへ解凍します。  
