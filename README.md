@@ -7,7 +7,7 @@ AI認識のFaster-Whisperをゆかりねっとや、ゆかコネNEOで使うた�
 * googleより少し認識速度が速いです(RTX3080Ti基準)  
 ![YukariWhisper01.png.](./image/YukariWhisper01.png "YukariWhisper01")  
 * nVIDIA系GPU(1000番以降)で動作します。 Driverは572.83以降(Cuda12.8)必須
-* **RTX 5000シリーズ(SM120対応)をお使いの方へ**: setup.batを実行すると自動的にSM120対応のPyTorchがインストールされます
+* **RTX 5000シリーズ(SM120対応)をお使いの方へ**: **Python 3.12が必須です**。setup.batを実行すると自動的にSM120対応のPyTorchがインストールされます
 ![YukariWhisper07.png.](./image/YukariWhisper07.png "YukariWhisper07")  
 
 # Installation
@@ -17,12 +17,13 @@ AI認識のFaster-Whisperをゆかりねっとや、ゆかコネNEOで使うた�
   ![YukariWhisper05.png.](./image/YukariWhisper05.png "YukariWhisper05")
 
 ### RTX 5000シリーズ(SM120)対応への更新手順
+  * **Python 3.12が必須です**。Python 3.11以前では動作しません
   * 既存の環境がある場合は、`venv`フォルダを削除してください
   * `setup.bat`を再実行すると、SM120対応のPyTorchが自動的にインストールされます
   * または、venv環境内で以下のコマンドを手動実行してください:
     ```
     pip uninstall torch torchvision torchaudio -y
-    pip install rtx-stone[all]
+    pip install https://github.com/kentstone84/PyTorch-2.10.0a0/releases/download/v2.10.0a0-sm120/torch-2.10.0a0+sm120-cp312-cp312-win_amd64.whl
     ```
 
 ### v0.0.5以前からバージョンアップの方
