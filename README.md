@@ -23,7 +23,7 @@ AI認識のFaster-Whisperをゆかりねっとや、ゆかコネNEOで使うた�
   * または、venv環境内で以下のコマンドを手動実行してください:
     ```
     pip uninstall torch torchvision torchaudio -y
-    pip install https://github.com/kentstone84/PyTorch-2.10.0a0/releases/download/v2.10.0a0-sm120/torch-2.10.0a0+sm120-cp312-cp312-win_amd64.whl
+    pip install "https://github.com/kentstone84/PyTorch-2.10.0a0/releases/download/v2.10.0a0-sm120/torch-2.10.0a0%2Bsm120-cp312-cp312-win_amd64.whl"
     ```
 
 ### v0.0.5以前からバージョンアップの方
